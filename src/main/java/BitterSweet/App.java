@@ -28,14 +28,22 @@ public class App
 
         //String fileName = chooseFile();
 
-        System.out.println(primitiveChooseFolder());
-        String fileName = chooseFilesFromFolder(primitiveChooseFolder());
+        //System.out.println(primitiveChooseFolder());
+        //File folder = new File(primitiveChooseFolder());
+        //File[] listOfFiles = folder.listFiles();
+        //System.out.println(listOfFiles);
+
+
+
+        //String fileName = chooseFilesFromFolder(primitiveChooseFolder());
 
         String fileText = null;
 
         String fileTextWordRoot = null;
 
-        fileText = readFile(fileName);
+        //fileText = readFile(fileName);
+
+        fileText = chooseFilesFromFolder(primitiveChooseFolder());
 
         //System.out.println(fileText);
         //System.out.println(deleteMark(fileText));

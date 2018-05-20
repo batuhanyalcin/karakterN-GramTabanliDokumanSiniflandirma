@@ -1,6 +1,6 @@
 package BitterSweet;
 
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.*;
 import zemberek.core.*;
 import zemberek.morphology.*;
 import zemberek.morphology.analysis.*;
@@ -17,8 +17,6 @@ import zemberek.morphology.TurkishMorphology;
 import zemberek.normalization.TurkishSpellChecker;
 import zemberek.tokenization.TurkishTokenizer;
 import zemberek.tokenization.antlr.TurkishLexer;
-
-
 
 import java.io.*;
 
@@ -161,13 +159,15 @@ public class textProcess {
     }
 
 
-
+    // Primitive folder path finder
     public static String primitiveChooseFolder(){
 
-        String path = chooseFile().substring(0,chooseFile().lastIndexOf("/"));
+        String path = chooseFile();
+        path = path.substring(0,path.lastIndexOf("/"));
 
         return path;
     }
+
 
     public static String chooseFilesFromFolder(String folderPath) throws IOException {
 
@@ -179,7 +179,11 @@ public class textProcess {
             File file = listOfFiles[i];
             if (file.isFile() && file.getName().endsWith(".txt")) {
                 String content = FileUtils.readFileToString(file);
+
+                System.out.println("+");
                 System.out.println(content);
+                System.out.println("+");
+                Total += (content + " ");
             }
         }
         return Total;
